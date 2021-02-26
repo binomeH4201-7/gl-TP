@@ -17,5 +17,6 @@ class Automate {
       void reduction(Symbole * sym, int aReduire);
 
    protected:
-      deque <Etat *> pile;
+      deque <Etat *> pileEtat;
+      deque <Symbole *> pileSymbole;
 };
