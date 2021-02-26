@@ -1,19 +1,21 @@
 #pragma once
 
 #include <string>
-#include <stack>
+#include <deque>
 #include "symbole.h"
+#include "etat.h"
 using namespace std;
 
+class Etat;
 class Automate {
 
    public:
       Automate() { }
       ~Automate() { }
 
-      void decalage(Symbole * sym, Etat * etat);
+      void decalage(Etat * etat);
       void reduction(Symbole * sym, int aReduire);
 
    protected:
-      stack<Etat> * pile;
+      deque <Etat *> pile;
 };
