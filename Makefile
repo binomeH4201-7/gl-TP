@@ -4,7 +4,8 @@ CC = g++
 CFLAGS = -ansi -pedantic -std=c++11
 EXEC_NAME = main
 LIBS =
-OBJ_FILES = main.o lexer.o symbole.o
+SOURCE_FILES = ${wildcard *.cpp}
+OBJ_FILES= ${SOURCE_FILES:%.cpp=%.o}
 
 all : $(EXEC_NAME)
 
