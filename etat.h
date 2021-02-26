@@ -8,6 +8,7 @@
 //include
 #include <string>
 #include "symbole.h"
+#include "automate.h"
 
 using namespace std;
 
@@ -37,50 +38,50 @@ public :
 
 class E2 : public Etat{
 public :
-    E0();
-    ~E0();
+    E2();
+    ~E2();
 };
 
 class E3 : public Etat{
 public :
-    E0();
-    ~E0();
+    E3();
+    ~E3();
 };
 
 class E4 : public Etat{
 public :
-    E0();
-    ~E0();
+    E4();
+    ~E4();
 };
 
 class E5 : public Etat{
 public :
-    E0();
-    ~E0();
+    E5();
+    ~E5();
 };
 
 class E6 : public Etat{
 public :
-    E0();
-    ~E0();
+    E6();
+    ~E6();
 };
 
 class E7 : public Etat{
 public :
-    E0();
-    ~E0();
+    E7
+    ~E7();
 };
 
 class E8 : public Etat{
 public :
-    E0();
-    ~E0();
+    E8();
+    ~E8();
 };
 
 class E9 : public Etat{
 public :
-    E0();
-    ~E0();
+    E9();
+    ~E9();
 };
 
 
