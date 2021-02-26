@@ -2,6 +2,7 @@
 
 void Automate::decalage(Etat * etat) {
   pileEtat.push_back(etat);
+  analyseur.avancer();
 }
 
 void Automate::reduction(Symbole * sym, int aReduire) {
