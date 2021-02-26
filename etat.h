@@ -12,10 +12,11 @@
 
 using namespace std;
 
+class Automate;
 
 class Etat {
 public :
-    Etat(string name);
+    Etat(string aName) : name(aName){}
     virtual ~Etat();
     void print() const;
     virtual bool transition(Automate & automate, Symbole * s) = 0;
@@ -26,62 +27,62 @@ protected:
 
 class E0 : public Etat{
 public :
-    E0(string name);
-    ~E0();
+    E0(string aName) : Etat(aName){}
+    virtual ~E0();
 };
 
 class E1 : public Etat{
 public :
-    E1(string name);
-    ~E1();
+    E1(string aName) : Etat(aName){}
+    virtual ~E1();
 };
 
 class E2 : public Etat{
 public :
-    E2(string name);
-    ~E2();
+    E2(string aName) : Etat(aName){}
+    virtual ~E2();
 };
 
 class E3 : public Etat{
 public :
-    E3(string name);
-    ~E3();
+    E3(string aName) : Etat(aName){}
+    virtual ~E3();
 };
 
 class E4 : public Etat{
 public :
-    E4(string name);
-    ~E4();
+    E4(string aName) : Etat(aName){}
+    virtual ~E4();
 };
 
 class E5 : public Etat{
 public :
-    E5(string name);
-    ~E5();
+    E5(string aName) : Etat(aName){}
+    virtual ~E5();
 };
 
 class E6 : public Etat{
 public :
-    E6(string name);
-    ~E6();
+    E6(string aName) : Etat(aName){}
+    virtual ~E6();
 };
 
 class E7 : public Etat{
 public :
-    E7(string name);
-    ~E7();
+    E7(string aName) : Etat(aName){}
+    virtual ~E7();
 };
 
 class E8 : public Etat{
 public :
-    E8(string name);
-    ~E8();
+    E8(string aName) : Etat(aName){}
+    virtual ~E8();
 };
 
 class E9 : public Etat{
 public :
-    E9(string name);
-    ~E9();
+    E9(string aName) : Etat(aName){}
+    virtual ~E9();
 };
 
 
