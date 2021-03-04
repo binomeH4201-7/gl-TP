@@ -9,6 +9,10 @@ int Symbole::getIdent() const {
     return ident;
 }
 
+bool Symbole::isValue() const {
+    return value;
+}
+
 void Entier::Affiche() {
    Symbole::Affiche();
    cout<<"("<<valeur<<")";

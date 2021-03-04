@@ -23,12 +23,25 @@ void Automate::reduction(Symbole * sym, int aReduire) {
      Empiler eNext
     */
 
-  for(int i =0; i < aReduire; i++){
-    pileEtat.pop_back();
-    pileSymbole.pop_back();
-  }
+    Entier* expr;
 
-  pileSymbole.push_back(sym);
+    if(aReduire ==1){
+        expr = new Entier(pileSymbole.back()->Eval());
+        pileEtat.pop_back();
+        pileSymbole.pop_back();
+    }else{
+        pileEtat.pop_back();
+        pileEtat.pop_back();
+        pileEtat.pop_back();
 
-  pileEtat.back()->transition(*this, pileSymbole.back());
+        int a = pileSymbole.back()->Eval();
+        pileSymbole.pop_back();
+        Symbole* operateur = pileSymbole.back();
+        pileSymbole.pop_back();
+        expr = new Entier(operateur->Operation(a,*pileSymbole.back()));
+        pileSymbole.pop_back();
+    }
+
+    pileSymbole.push_back(expr);
+    pileEtat.back()->transition(*this, pileSymbole.back());
 }
