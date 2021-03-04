@@ -14,8 +14,9 @@ class Symbole {
       operator int() const { return ident; }
       virtual void Affiche();
       virtual void ChangeIdent(int newIdent) { ident=newIdent; };
+      int getIdent() const;
 
-   protected:
+protected:
       int ident;
 };
 

@@ -5,6 +5,10 @@ void Symbole::Affiche() {
    cout<<Etiquettes[ident];
 }
 
+int Symbole::getIdent() const {
+    return ident;
+}
+
 void Entier::Affiche() {
    Symbole::Affiche();
    cout<<"("<<valeur<<")";

@@ -15,12 +15,15 @@ void Etat::print() const{
 
 
 bool E0::transition(Automate &automate, Symbole *s) {
-    switch (*s){
+    switch (s->getIdent()){
         case OPENPAR:
             automate.decalage(new E2());
             break;
         case INT:
             automate.decalage(new E3());
+            break;
+        case EXPR:
+            automate.decalage(new E1());
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -32,7 +35,7 @@ bool E0::transition(Automate &automate, Symbole *s) {
 }
 
 bool E1::transition(Automate &automate, Symbole *s) {
-    switch (*s){
+    switch (s->getIdent()){
         case PLUS:
             automate.decalage(new E4());
             break;
@@ -53,12 +56,15 @@ bool E1::transition(Automate &automate, Symbole *s) {
 }
 
 bool E2::transition(Automate &automate, Symbole *s) {
-    switch (*s){
+    switch (s->getIdent()){
         case INT:
             automate.decalage(new E3());
             break;
         case OPENPAR:
             automate.decalage(new E2());
+            break;
+        case EXPR:
+            automate.decalage(new E6());
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -70,7 +76,7 @@ bool E2::transition(Automate &automate, Symbole *s) {
 }
 
 bool E3::transition(Automate &automate, Symbole *s) {
-    switch (*s){
+    switch (s->getIdent()){
         case PLUS:
             automate.reduction(s,regleToNbMembres[5]);
             break;
@@ -93,12 +99,15 @@ bool E3::transition(Automate &automate, Symbole *s) {
 }
 
 bool E4::transition(Automate &automate, Symbole *s) {
-    switch (*s){
+    switch (s->getIdent()){
         case INT:
             automate.decalage(new E3());
             break;
         case OPENPAR:
             automate.decalage(new E2());
+            break;
+        case EXPR:
+            automate.decalage(new E7());
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -110,12 +119,15 @@ bool E4::transition(Automate &automate, Symbole *s) {
 }
 
 bool E5::transition(Automate &automate, Symbole *s) {
-    switch (*s){
+    switch (s->getIdent()){
         case INT:
             automate.decalage(new E3());
             break;
         case OPENPAR:
             automate.decalage(new E2());
+            break;
+        case EXPR:
+            automate.decalage(new E8());
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -127,7 +139,7 @@ bool E5::transition(Automate &automate, Symbole *s) {
 }
 
 bool E6::transition(Automate &automate, Symbole *s) {
-    switch (*s){
+    switch (s->getIdent()){
         case PLUS:
             automate.decalage(new E4());
             break;
@@ -148,7 +160,7 @@ bool E6::transition(Automate &automate, Symbole *s) {
 
 
 bool E7::transition(Automate &automate, Symbole *s) {
-    switch (*s){
+    switch (s->getIdent()){
         case PLUS:
             automate.reduction(s, regleToNbMembres[2]);
             break;
@@ -171,7 +183,7 @@ bool E7::transition(Automate &automate, Symbole *s) {
 }
 
 bool E8::transition(Automate &automate, Symbole *s) {
-    switch (*s){
+    switch (s->getIdent()){
         case PLUS:
             automate.reduction(s, regleToNbMembres[3]);
             break;
@@ -194,7 +206,7 @@ bool E8::transition(Automate &automate, Symbole *s) {
 }
 
 bool E9::transition(Automate &automate, Symbole *s) {
-    switch (*s){
+    switch (s->getIdent()){
         case PLUS:
             automate.reduction(s, regleToNbMembres[4]);
             break;
