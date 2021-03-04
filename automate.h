@@ -22,5 +22,5 @@ class Automate {
       deque <Symbole *> pileSymbole;
       Lexer analyseur;
       void avancer() {analyseur.Avancer(); };
-      void consulter() {analyseur.Consulter() ;};
+      Symbole * consulter() {return analyseur.Consulter() ;};
 };
