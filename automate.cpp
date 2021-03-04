@@ -1,4 +1,7 @@
 #include "automate.h"
+#include <iostream>
+
+using namespace std;
 
 void Automate::decalage(Etat * etat) {
   /* Empiler etat sur la pile des états
@@ -41,7 +44,25 @@ void Automate::reduction(Symbole * sym, int aReduire) {
         expr = new Entier(operateur->Operation(a,*pileSymbole.back()));
         pileSymbole.pop_back();
     }
-
+    expr->ChangeIdent(EXPR);
     pileSymbole.push_back(expr);
     pileEtat.back()->transition(*this, pileSymbole.back());
 }
+
+bool Automate::isOver(){return over;}
+
+void Automate::next(){
+    over = pileEtat.back()->transition(*this,consulter());
+}
+int Automate::answer(){ return pileSymbole.back()->Eval();}
+
+Automate::Automate(string chaine) : analyseur(chaine) {
+    pileEtat.push_back(new E0());
+}
+void Automate::Affiche(){
+    pileEtat.back()->Affiche();
+    pileSymbole.back()->Affiche();
+}
+
+
+

@@ -43,9 +43,7 @@ bool E1::transition(Automate &automate, Symbole *s) {
             automate.decalage(new E5());
             break;
         case FIN:
-            //TODO: Implémenter la fin
-            cout << "FIN" <<endl;
-            break;
+            return true;
         case ERREUR:
             cout << "Erreur" <<endl;
             break;

@@ -14,9 +14,9 @@ class Symbole {
         virtual ~Symbole() { }
         operator int() const { return ident; }
         virtual void Affiche();
-        virtual void ChangeIdent(int newIdent) { ident=newIdent; };
-        virtual int Eval(){};
-        virtual int Operation(int a, int b){};
+        virtual void ChangeIdent(int newIdent) { ident=newIdent; }
+        virtual int Eval(){return -1;}
+        virtual int Operation(int a, int b);
         int getIdent() const;
         bool isValue() const;
 
@@ -31,7 +31,7 @@ class Entier : public Symbole {
       Entier(int v) : Symbole(INT), valeur(v) { }
       ~Entier() { }
       virtual void Affiche();
-      virtual int Eval(){return valeur;};
+      virtual int Eval(){return valeur;}
    protected:
       int valeur;
 };

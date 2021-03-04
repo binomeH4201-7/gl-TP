@@ -15,9 +15,21 @@ bool Symbole::isValue() const {
 
 void Entier::Affiche() {
    Symbole::Affiche();
-   cout<<"("<<valeur<<")";
+   cout<<"("<<valeur<<")"<<endl;
 }
 
-int Entier::Eval(){
-   return 0;
+int Symbole::Operation(int a, int b){
+    int res = -1;
+    switch(this->ident){
+        case PLUS:
+            res = a+b;
+            break;
+        case MULT:
+            res = a*b;
+            break;
+        default:
+            break;
+    }
+    return res;
 }
+

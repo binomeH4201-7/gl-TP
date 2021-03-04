@@ -9,6 +9,7 @@
 #include <string>
 #include "symbole.h"
 #include "automate.h"
+#include <iostream>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ public :
     virtual ~Etat(){}
     void print() const;
     virtual bool transition(Automate & automate, Symbole * s) = 0;
+    virtual void Affiche(){cout<< name<<endl;};
 
 protected:
     string name;
