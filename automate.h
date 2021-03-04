@@ -15,7 +15,7 @@ class Automate {
       ~Automate() { }
 
       void decalage(Etat * etat);
-      void reduction(Symbole * sym, int aReduire);
+      void reduction(int aReduire);
       bool isOver();
       void next();
       int answer();

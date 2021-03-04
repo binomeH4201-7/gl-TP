@@ -76,16 +76,16 @@ bool E2::transition(Automate &automate, Symbole *s) {
 bool E3::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
         case PLUS:
-            automate.reduction(s,regleToNbMembres[5]);
+            automate.reduction(regleToNbMembres[5]);
             break;
         case MULT:
-            automate.reduction(s,regleToNbMembres[5]);
+            automate.reduction(regleToNbMembres[5]);
             break;
         case OPENPAR:
-            automate.reduction(s,regleToNbMembres[5]);
+            automate.reduction(regleToNbMembres[5]);
             break;
         case FIN:
-            automate.reduction(s,regleToNbMembres[5]);
+            automate.reduction(regleToNbMembres[5]);
             break;
         case ERREUR:
             cout << "Erreur" <<endl;

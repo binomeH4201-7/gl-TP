@@ -16,7 +16,7 @@ void Automate::decalage(Etat * etat) {
   avancer();
 }
 
-void Automate::reduction(Symbole * sym, int aReduire) {
+void Automate::reduction(int aReduire) {
 
    /*depiler de la pile d'état le nombre aReduire
      depiler de la pile de symboles le nombre aReduire
