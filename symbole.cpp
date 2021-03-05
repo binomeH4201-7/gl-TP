@@ -13,9 +13,21 @@ bool Symbole::isValue() const {
     return value;
 }
 
+void Symbole::ChangeIdent(int newIdent){
+  ident = newIdent;
+}
+
+int Symbole::Eval(){
+  return -1;
+}
+
 void Entier::Affiche() {
    Symbole::Affiche();
    cout<<"("<<valeur<<")";
+}
+
+int Entier::Eval(){
+  return valeur;
 }
 
 int Symbole::Operation(int a, int b){
@@ -23,7 +35,6 @@ int Symbole::Operation(int a, int b){
     switch(this->ident){
         case PLUS:
             res = a+b;
-            cout << "a="<<a<<" b="<<b<<endl;
             break;
         case MULT:
             res = a*b;

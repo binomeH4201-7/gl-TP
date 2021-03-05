@@ -19,9 +19,8 @@ class Etat {
 public :
     Etat(string aName) : name(aName){}
     virtual ~Etat(){}
-    void print() const;
     virtual bool transition(Automate & automate, Symbole * s) = 0;
-    virtual void Affiche(){cout<< name;};
+    virtual void Affiche();
 
 protected:
     string name;

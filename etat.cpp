@@ -9,8 +9,8 @@ using namespace std;
 
 std::map<int,int> regleToNbMembres = {{1,1},{2,3},{3,3},{4,3},{5,1}};
 
-void Etat::print() const{
-    cout << name << endl;
+void Etat::Affiche(){
+    cout << name;
 }
 
 

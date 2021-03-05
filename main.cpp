@@ -3,14 +3,24 @@
 #include "automate.h"
 
 
-int main(void) {
+int main(int argc, char *argv[]) {
    //string chaine("(1+34)*123");
-    string chaine("2*(2)");
+   //string chaine("2*(2)");
+    
+    if(argc != 2){
+      cout << "Il ne faut passer qu'un seul argument, la chaîne à évaluer\n"
+              "Exemple : \"2+78\"\n"
+              "La chaine ne doit pas contenir d'espace, et uniquement les symbôles \"+\", \"*\", \"(\",\")\".\n"
+              "Les nombres doivent être des entiers positifs."
+              << endl;
+      return -1;
+    }
+
+    string chaine(argv[1]);
 
     Automate* automate = new Automate(chaine);
     while(!automate->isOver()){
         automate->next();
-        automate->Affiche();
     }
     int res = automate->answer();
     cout << res << endl;

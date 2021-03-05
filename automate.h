@@ -6,7 +6,6 @@
 #include "etat.h"
 #include "lexer.h"
 #include <iostream>
-using namespace std;
 
 class Etat;
 class Automate {
@@ -26,8 +25,7 @@ class Automate {
       deque <Etat *> pileEtat;
       deque <Symbole *> pileSymbole;
       Lexer analyseur;
-        bool over;
-
-    void avancer() {cout << "on avance la tete de lecture" << endl; analyseur.Avancer(); };
-      Symbole * consulter() {cout << "Symbole lu :" << analyseur.Consulter()->Eval() << endl;return analyseur.Consulter();}
+      bool over;
+      void avancer(); 
+      Symbole * consulter();
 };

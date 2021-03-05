@@ -1,7 +1,14 @@
 #include "automate.h"
-#include <iostream>
 
 using namespace std;
+
+void Automate::avancer() {
+  analyseur.Avancer();
+}
+
+Symbole * Automate::consulter(){
+  return analyseur.Consulter();
+}
 
 void Automate::decalage(Etat * etat,bool terminal) {
   /* Empiler etat sur la pile des états
@@ -9,14 +16,12 @@ void Automate::decalage(Etat * etat,bool terminal) {
      Empiler S sur la pile des symboles
      Avancer le pointeur du flux
      */
-  cout << "Début décalage à l'état "; etat->Affiche(); cout << endl;
   pileEtat.push_back(etat);
   if(!terminal){
   Symbole * s = consulter();
   pileSymbole.push_back(s);
     avancer();
   }
-  cout << "Fin décalage à l'état "; etat->Affiche(); cout << endl;
 }
 
 void Automate::reduction(int aReduire) {
@@ -31,8 +36,6 @@ void Automate::reduction(int aReduire) {
 
     
     Entier* expr;
-    cout << "Début réduction de "<< aReduire << " symboles."<< endl;
-
     if(aReduire ==1){
         expr = new Entier(pileSymbole.back()->Eval());
         pileEtat.pop_back();
@@ -43,7 +46,6 @@ void Automate::reduction(int aReduire) {
         pileEtat.pop_back();
         
         if(pileSymbole.back()->Eval() != -1){ //si le premier est une valeur
-          cout << "reduction autour d'un opérateur" << endl;
           int a = pileSymbole.back()->Eval();
           pileSymbole.pop_back();
           Symbole* operateur = pileSymbole.back();
@@ -51,7 +53,6 @@ void Automate::reduction(int aReduire) {
           expr = new Entier(operateur->Operation(a,pileSymbole.back()->Eval()));
           pileSymbole.pop_back();
         }else{ //sinon, c'est qu'il s'agit de la règle E -> ( E )
-          cout << "reduction autour d'une parenthèse" << endl;
           pileSymbole.pop_back();
           expr = new Entier(pileSymbole.back()->Eval());
           pileSymbole.pop_back();
@@ -61,8 +62,6 @@ void Automate::reduction(int aReduire) {
     expr->ChangeIdent(EXPR);
     pileSymbole.push_back(expr);
     pileEtat.back()->transition(*this, pileSymbole.back());
-    
-    cout << "Fin réduction de "<< aReduire << " symboles."<< endl;
 }
 
 bool Automate::isOver(){return over;}
@@ -76,7 +75,6 @@ Automate::Automate(string chaine) : analyseur(chaine) {
     pileEtat.push_back(new E0());
 }
 void Automate::Affiche(){
-    cout << "-------------------------" << endl;
     cout << "Affichage de la pile Etat" << endl;
     for(int i = 0; i < pileEtat.size(); i++){
       pileEtat[i]->Affiche();

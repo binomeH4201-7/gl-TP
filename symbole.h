@@ -11,12 +11,11 @@ const string Etiquettes[] = { "OPENPAR", "CLOSEPAR", "PLUS", "MULT", "INT","EXPR
 class Symbole {
     public:
         Symbole() : ident(ERREUR), value(true){}
-        Symbole(int i) : ident(i) {value = (i!=PLUS | i!=MULT);}
+        Symbole(int i) : ident(i) {value = (i==INT | i==EXPR);}
         virtual ~Symbole() { }
-        operator int() const { return ident; }
         virtual void Affiche();
-        virtual void ChangeIdent(int newIdent) { ident=newIdent; }
-        virtual int Eval(){return -1;}
+        virtual void ChangeIdent(int newIdent);
+        virtual int Eval();
         virtual int Operation(int a, int b);
         int getIdent() const;
         bool isValue() const;
@@ -28,11 +27,11 @@ protected:
 
 class Entier : public Symbole {
    public:
-        Entier() : Symbole(INT), valeur(-1){}
+      Entier() : Symbole(INT), valeur(-1){}
       Entier(int v) : Symbole(INT), valeur(v) {}
       ~Entier() { }
       virtual void Affiche();
-      virtual int Eval(){return valeur;}
+      virtual int Eval();
    protected:
       int valeur;
 };
