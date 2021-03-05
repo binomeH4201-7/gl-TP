@@ -15,7 +15,7 @@ bool Symbole::isValue() const {
 
 void Entier::Affiche() {
    Symbole::Affiche();
-   cout<<"("<<valeur<<")"<<endl;
+   cout<<"("<<valeur<<")";
 }
 
 int Symbole::Operation(int a, int b){

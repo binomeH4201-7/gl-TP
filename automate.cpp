@@ -60,8 +60,20 @@ Automate::Automate(string chaine) : analyseur(chaine) {
     pileEtat.push_back(new E0());
 }
 void Automate::Affiche(){
-    pileEtat.back()->Affiche();
-    pileSymbole.back()->Affiche();
+    cout << "-------------------------" << endl;
+    cout << "Affichage de la pile Etat" << endl;
+    for(int i = 0; i < pileEtat.size(); i++){
+      pileEtat[i]->Affiche();
+      cout << " | ";
+    }
+
+    cout << endl << "-------------------------" << endl;
+    cout << "Affichage de la pile Symbole" << endl;
+    for(int i = 0; i < pileSymbole.size(); i++){
+      pileSymbole[i]->Affiche();
+      cout << " | ";
+    }
+    cout << endl << endl;
 }
 
 
