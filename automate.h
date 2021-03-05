@@ -15,7 +15,7 @@ class Automate {
       Automate(string chaine);
       ~Automate() { }
 
-      void decalage(Etat * etat);
+      void decalage(Etat * etat, bool isSymbolTerminal);
       void reduction(int aReduire);
       bool isOver();
       void next();
@@ -28,6 +28,6 @@ class Automate {
       Lexer analyseur;
         bool over;
 
-    void avancer() {analyseur.Avancer(); };
+    void avancer() {cout << "on avance la tete de lecture" << endl; analyseur.Avancer(); };
       Symbole * consulter() {cout << "Symbole lu :" << analyseur.Consulter()->Eval() << endl;return analyseur.Consulter();}
 };

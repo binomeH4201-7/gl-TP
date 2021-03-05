@@ -3,17 +3,20 @@
 
 using namespace std;
 
-void Automate::decalage(Etat * etat) {
+void Automate::decalage(Etat * etat,bool terminal) {
   /* Empiler etat sur la pile des états
      Lire (sans avancer) le prochain symbole S sur le flux
      Empiler S sur la pile des symboles
      Avancer le pointeur du flux
      */
-
+  cout << "Début décalage à l'état "; etat->Affiche(); cout << endl;
   pileEtat.push_back(etat);
+  if(!terminal){
   Symbole * s = consulter();
   pileSymbole.push_back(s);
-  avancer();
+    avancer();
+  }
+  cout << "Fin décalage à l'état "; etat->Affiche(); cout << endl;
 }
 
 void Automate::reduction(int aReduire) {
@@ -28,6 +31,7 @@ void Automate::reduction(int aReduire) {
 
     
     Entier* expr;
+    cout << "Début réduction de "<< aReduire << " symboles."<< endl;
 
     if(aReduire ==1){
         expr = new Entier(pileSymbole.back()->Eval());
@@ -48,6 +52,8 @@ void Automate::reduction(int aReduire) {
     expr->ChangeIdent(EXPR);
     pileSymbole.push_back(expr);
     pileEtat.back()->transition(*this, pileSymbole.back());
+    
+    cout << "Fin réduction de "<< aReduire << " symboles."<< endl;
 }
 
 bool Automate::isOver(){return over;}

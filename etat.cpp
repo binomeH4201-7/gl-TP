@@ -17,13 +17,13 @@ void Etat::print() const{
 bool E0::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
         case OPENPAR:
-            automate.decalage(new E2());
+            automate.decalage(new E2(), false);
             break;
         case INT:
-            automate.decalage(new E3());
+            automate.decalage(new E3(),false);
             break;
         case EXPR:
-            automate.decalage(new E1());
+            automate.decalage(new E1(),true);
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -37,10 +37,10 @@ bool E0::transition(Automate &automate, Symbole *s) {
 bool E1::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
         case PLUS:
-            automate.decalage(new E4());
+            automate.decalage(new E4(),false);
             break;
         case MULT:
-            automate.decalage(new E5());
+            automate.decalage(new E5(),false);
             break;
         case FIN:
             return true;
@@ -56,13 +56,13 @@ bool E1::transition(Automate &automate, Symbole *s) {
 bool E2::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
         case INT:
-            automate.decalage(new E3());
+            automate.decalage(new E3(),false);
             break;
         case OPENPAR:
-            automate.decalage(new E2());
+            automate.decalage(new E2(),false);
             break;
         case EXPR:
-            automate.decalage(new E6());
+            automate.decalage(new E6(),true);
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -99,13 +99,13 @@ bool E3::transition(Automate &automate, Symbole *s) {
 bool E4::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
         case INT:
-            automate.decalage(new E3());
+            automate.decalage(new E3(),false);
             break;
         case OPENPAR:
-            automate.decalage(new E2());
+            automate.decalage(new E2(),false);
             break;
         case EXPR:
-            automate.decalage(new E7());
+            automate.decalage(new E7(),true);
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -119,13 +119,13 @@ bool E4::transition(Automate &automate, Symbole *s) {
 bool E5::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
         case INT:
-            automate.decalage(new E3());
+            automate.decalage(new E3(),false);
             break;
         case OPENPAR:
-            automate.decalage(new E2());
+            automate.decalage(new E2(),false);
             break;
         case EXPR:
-            automate.decalage(new E8());
+            automate.decalage(new E8(),true);
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -139,13 +139,13 @@ bool E5::transition(Automate &automate, Symbole *s) {
 bool E6::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
         case PLUS:
-            automate.decalage(new E4());
+            automate.decalage(new E4(),false);
             break;
         case MULT:
-            automate.decalage(new E5());
+            automate.decalage(new E5(),false);
             break;
         case CLOSEPAR:
-            automate.decalage(new E9());
+            automate.decalage(new E9(),true);
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -163,7 +163,7 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.reduction(regleToNbMembres[2]);
             break;
         case MULT:
-            automate.decalage(new E5());
+            automate.decalage(new E5(),false);
             break;
         case CLOSEPAR:
             automate.reduction(regleToNbMembres[2]);
