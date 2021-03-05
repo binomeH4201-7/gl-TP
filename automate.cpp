@@ -69,7 +69,12 @@ bool Automate::isOver(){return over;}
 void Automate::next(){
     over = pileEtat.back()->transition(*this,consulter());
 }
-int Automate::answer(){ return pileSymbole.back()->Eval();}
+int Automate::answer(){
+  if(!pileSymbole.empty())
+    return pileSymbole.back()->Eval();
+  else
+    return -1;
+}
 
 Automate::Automate(string chaine) : analyseur(chaine) {
     pileEtat.push_back(new E0());
