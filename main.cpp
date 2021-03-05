@@ -25,13 +25,6 @@ int main(int argc, char *argv[]) {
     int res = automate->answer();
     cout << res << endl;
 
-   /*Creer l'automate, init la pile à l'état 0
-    Lire le premier symbole
-    Empiler le symbole
-    Faire la transition (etat.transition qui appelle automate.reduction ou automate.decalage)
-    Si on a un decalage, on deplace la tete de lecture (pas dans le cas d'une reduction
-    */
-
     /*
     Lexer l(chaine);
 
