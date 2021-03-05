@@ -27,10 +27,10 @@ bool E0::transition(Automate &automate, Symbole *s) {
             automate.decalage(new E1(),true);
             break;
         case ERREUR:
-            cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
+            cout << "Un symbole incorrect a été détecté.\nmake help pour plus d'informations" <<endl;
             return true;
         default :
-            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
+            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake help pour plus d'informations" << endl;
             return true;
     }
     return false;
@@ -47,10 +47,10 @@ bool E1::transition(Automate &automate, Symbole *s) {
         case FIN:
             return true;
         case ERREUR:
-            cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
+            cout << "Un symbole incorrect a été détecté.\nmake help pour plus d'informations" <<endl;
             return true;
         default :
-            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
+            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake help pour plus d'informations" << endl;
             return true;
     }
     return false;
@@ -68,7 +68,7 @@ bool E2::transition(Automate &automate, Symbole *s) {
             automate.decalage(new E6(),true);
             break;
         case ERREUR:
-            cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
+            cout << "Un symbole incorrect a été détecté.\nmake help pour plus d'informations" <<endl;
             return true;
         default :
             break;
@@ -91,7 +91,7 @@ bool E3::transition(Automate &automate, Symbole *s) {
             automate.reduction(regleToNbMembres[5]);
             break;
         case ERREUR:
-            cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
+            cout << "Un symbole incorrect a été détecté.\nmake help pour plus d'informations" <<endl;
             return true;
         default :
             break;
@@ -111,10 +111,10 @@ bool E4::transition(Automate &automate, Symbole *s) {
             automate.decalage(new E7(),true);
             break;
         case ERREUR:
-            cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
+            cout << "Un symbole incorrect a été détecté.\nmake help pour plus d'informations" <<endl;
             return true;
         default :
-            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
+            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake help pour plus d'informations" << endl;
             return true;
     }
     return false;
@@ -132,10 +132,10 @@ bool E5::transition(Automate &automate, Symbole *s) {
             automate.decalage(new E8(),true);
             break;
         case ERREUR:
-            cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
+            cout << "Un symbole incorrect a été détecté.\nmake help pour plus d'informations" <<endl;
             return true;
         default :
-            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
+            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake help pour plus d'informations" << endl;
             return true;
     }
     return false;
@@ -153,10 +153,10 @@ bool E6::transition(Automate &automate, Symbole *s) {
             automate.decalage(new E9(),false);
             break;
         case ERREUR:
-            cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
+            cout << "Un symbole incorrect a été détecté.\nmake help pour plus d'informations" <<endl;
             return true;
         default :
-            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
+            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake help pour plus d'informations" << endl;
             return true;
     }
     return false;
@@ -178,10 +178,10 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.reduction(regleToNbMembres[2]);
             break;
         case ERREUR:
-            cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
+            cout << "Un symbole incorrect a été détecté.\nmake help pour plus d'informations" <<endl;
             return true;
         default :
-            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
+            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake help pour plus d'informations" << endl;
             return true;
     }
     return false;
@@ -202,10 +202,10 @@ bool E8::transition(Automate &automate, Symbole *s) {
             automate.reduction(regleToNbMembres[3]);
             break;
         case ERREUR:
-            cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
+            cout << "Un symbole incorrect a été détecté.\nmake help pour plus d'informations" <<endl;
             return true;
         default :
-            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
+            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake help pour plus d'informations" << endl;
             return true;
     }
     return false;
@@ -226,10 +226,10 @@ bool E9::transition(Automate &automate, Symbole *s) {
             automate.reduction(regleToNbMembres[4]);
             break;
         case ERREUR:
-            cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
+            cout << "Un symbole incorrect a été détecté.\nmake help pour plus d'informations" <<endl;
             return true;
         default :
-            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
+            cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake help pour plus d'informations" << endl;
             return true;
     }
     return false;
