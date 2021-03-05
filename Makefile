@@ -7,6 +7,18 @@ LIBS =
 SOURCE_FILES = ${wildcard *.cpp}
 OBJ_FILES= ${SOURCE_FILES:%.cpp=%.o}
 
+
+all : $(EXEC_NAME)
+
+clean :
+	rm $(EXEC_NAME) $(OBJ_FILES)
+
+$(EXEC_NAME) : $(OBJ_FILES)
+	$(CC) -o $(EXEC_NAME) $(OBJ_FILES) $(LIBS)
+
+%.o: %.cpp %.h
+	$(CC) $(CFLAGS) -o $@ -c $<
+
 help :
 	@echo "Automate LALR de la grammaire suivante :"
 	@echo "(1) : E' -> E"
@@ -26,16 +38,3 @@ help :
 	@echo "Si la grammaire ou les symboles utilisés sont incorrects, l'automate s'arrête et affiche un message d'erreur."
 	@echo "En cas d'erreur, la valeur affichée n'a aucun sens (-1 ou valeur calculée au moment de l'erreur)."
 	@echo "En cas d'erreur, la valeur de retour reste 0 (car l'exécution du programme est correcte)."
-
-all : $(EXEC_NAME)
-
-clean :
-	rm $(EXEC_NAME) $(OBJ_FILES)
-
-$(EXEC_NAME) : $(OBJ_FILES)
-	$(CC) -o $(EXEC_NAME) $(OBJ_FILES) $(LIBS)
-
-%.o: %.cpp %.h
-	$(CC) $(CFLAGS) -o $@ -c $<
-
-

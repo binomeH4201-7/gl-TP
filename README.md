@@ -1,6 +1,6 @@
 # TP Grammaire et Langage
 
-*Auteurs :* BATEL Arthur, Buonomo Fanny
+*Auteurs :* BATEL Arthur, BUONOMO Fanny
 
 ## Introduction
 L'objectif de ce TP est de construire un automate LALR (analyseur ascendant) afin de permettre l'analyse de la grammaire suivante :
@@ -13,7 +13,8 @@ L'objectif de ce TP est de construire un automate LALR (analyseur ascendant) afi
 
 ## Fonctionnement de l'automate
 ### Le rendu du projet
-Notre rendu est constitué d'un **Makefile**, des fichiers sources, ainsi qu'un **README**. 
+Notre rendu est constitué d'un **Makefile**, des fichiers sources, ainsi que d'un **README**. Il peut être téléchargé depuis le [GitHub suivant](https://github.com/binomeH4201-7/gl-TP).
+
 
 |Commande |Description|
 |---------|-----------|
@@ -22,7 +23,7 @@ Notre rendu est constitué d'un **Makefile**, des fichiers sources, ainsi qu'un 
 |`make help`| Explique rapidement le fonctionnement de l'automate|
 
 ### Exécuter l'automate
-Une fois compilé, l'automate s'exécute avec la commande `./main <formule>`. Le paramètre formule est obligatoire, et il ne doit en avoir qu'un. La formule doit respecter les règles suivantes :
+Une fois compilé, l'automate s'exécute avec la commande `./main <formule>`. Le paramètre `formule` est obligatoire, et il ne doit en avoir qu'un. La formule doit respecter les règles suivantes :
 
 * Ne contient pas d'espace
 * Respecte les règles de la grammaire
