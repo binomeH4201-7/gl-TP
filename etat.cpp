@@ -81,7 +81,7 @@ bool E3::transition(Automate &automate, Symbole *s) {
         case MULT:
             automate.reduction(regleToNbMembres[5]);
             break;
-        case OPENPAR:
+        case CLOSEPAR:
             automate.reduction(regleToNbMembres[5]);
             break;
         case FIN:
