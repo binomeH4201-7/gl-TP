@@ -25,16 +25,6 @@ int main(int argc, char *argv[]) {
     int res = automate->answer();
     cout << res << endl;
 
-    /*
-    Lexer l(chaine);
-
-    Symbole * s;
-   while(*(s=l.Consulter())!=FIN) { 
-      s->Affiche();
-      cout<<endl;
-      l.Avancer();
-   }
-     */
    return 0;
 }
 

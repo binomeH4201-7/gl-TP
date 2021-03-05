@@ -18,7 +18,6 @@ class Symbole {
         virtual int Eval();
         virtual int Operation(int a, int b);
         int getIdent() const;
-        bool isValue() const;
 
 protected:
       int ident;

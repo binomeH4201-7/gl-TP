@@ -9,10 +9,6 @@ int Symbole::getIdent() const {
     return ident;
 }
 
-bool Symbole::isValue() const {
-    return value;
-}
-
 void Symbole::ChangeIdent(int newIdent){
   ident = newIdent;
 }
