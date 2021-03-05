@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 using namespace std;
 
 enum Identificateurs { OPENPAR, CLOSEPAR, PLUS, MULT, INT, EXPR, FIN, ERREUR };
@@ -28,7 +29,7 @@ protected:
 class Entier : public Symbole {
    public:
         Entier() : Symbole(INT), valeur(-1){}
-      Entier(int v) : Symbole(INT), valeur(v) { }
+      Entier(int v) : Symbole(INT), valeur(v) {}
       ~Entier() { }
       virtual void Affiche();
       virtual int Eval(){return valeur;}

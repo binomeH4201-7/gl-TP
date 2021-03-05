@@ -23,6 +23,7 @@ int Symbole::Operation(int a, int b){
     switch(this->ident){
         case PLUS:
             res = a+b;
+            cout << "a="<<a<<" b="<<b<<endl;
             break;
         case MULT:
             res = a*b;

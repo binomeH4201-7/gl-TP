@@ -43,10 +43,12 @@ void Automate::reduction(int aReduire) {
         pileEtat.pop_back();
 
         int a = pileSymbole.back()->Eval();
+        cout<<"from automate.cpp a="<<a<<endl;
         pileSymbole.pop_back();
         Symbole* operateur = pileSymbole.back();
         pileSymbole.pop_back();
-        expr = new Entier(operateur->Operation(a,*pileSymbole.back()));
+        cout<<"from automate.cpp b="<<pileSymbole.back()->Eval()<<endl;
+        expr = new Entier(operateur->Operation(a,pileSymbole.back()->Eval()));
         pileSymbole.pop_back();
     }
     expr->ChangeIdent(EXPR);
