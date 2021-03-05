@@ -160,7 +160,7 @@ bool E6::transition(Automate &automate, Symbole *s) {
 bool E7::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
         case PLUS:
-            automate.reduction( regleToNbMembres[2]);
+            automate.reduction(regleToNbMembres[2]);
             break;
         case MULT:
             automate.decalage(new E5());
@@ -169,7 +169,7 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.reduction(regleToNbMembres[2]);
             break;
         case FIN:
-            automate.reduction( regleToNbMembres[2]);
+            automate.reduction(regleToNbMembres[2]);
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -182,17 +182,16 @@ bool E7::transition(Automate &automate, Symbole *s) {
 
 bool E8::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
-        case PLUS:
-            automate.reduction( regleToNbMembres[3]);
+            automate.reduction(regleToNbMembres[3]);
             break;
         case MULT:
-            automate.reduction( regleToNbMembres[3]);
+            automate.reduction(regleToNbMembres[3]);
             break;
         case CLOSEPAR:
-            automate.reduction( regleToNbMembres[3]);
+            automate.reduction(regleToNbMembres[3]);
             break;
         case FIN:
-            automate.reduction( regleToNbMembres[3]);
+            automate.reduction(regleToNbMembres[3]);
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
@@ -206,16 +205,16 @@ bool E8::transition(Automate &automate, Symbole *s) {
 bool E9::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
         case PLUS:
-            automate.reduction( regleToNbMembres[4]);
+            automate.reduction(regleToNbMembres[4]);
             break;
         case MULT:
-            automate.reduction( regleToNbMembres[4]);
+            automate.reduction(regleToNbMembres[4]);
             break;
         case CLOSEPAR:
-            automate.reduction( regleToNbMembres[4]);
+            automate.reduction(regleToNbMembres[4]);
             break;
         case FIN:
-            automate.reduction( regleToNbMembres[4]);
+            automate.reduction(regleToNbMembres[4]);
             break;
         case ERREUR:
             cout << "Erreur" <<endl;
