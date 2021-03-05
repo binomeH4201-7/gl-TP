@@ -11,7 +11,7 @@ Symbole * Automate::consulter(){
 }
 
 void Automate::decalage(Etat * etat,bool terminal) {
-  /* Empiler etat sur la pile des états
+  /* Empiler etat sur la pile des etats
      Lire (sans avancer) le prochain symbole S sur le flux
      Empiler S sur la pile des symboles
      Avancer le pointeur du flux
@@ -26,15 +26,14 @@ void Automate::decalage(Etat * etat,bool terminal) {
 
 void Automate::reduction(int aReduire) {
 
-   /*depiler de la pile d'état le nombre aReduire
+   /*depiler de la pile d'etat le nombre aReduire
      depiler de la pile de symboles le nombre aReduire
-     A partir des symboles dépilés, évaluer l'expression Expr
+     A partir des symboles depiles, evaluer l'expression Expr
      Empiler expr dans la pile des symboles
-     Calculer l'état suivant eNext à partir du sommet de la pile des état et expr
+     Calculer l'etat suivant eNext a partir du sommet de la pile des etat et expr
      Empiler eNext
     */
 
-    
     Entier* expr;
     if(aReduire ==1){
         expr = new Entier(pileSymbole.back()->Eval());
@@ -44,7 +43,7 @@ void Automate::reduction(int aReduire) {
         pileEtat.pop_back();
         pileEtat.pop_back();
         pileEtat.pop_back();
-        
+
         if(pileSymbole.back()->Eval() != -1){ //si le premier est une valeur
           int a = pileSymbole.back()->Eval();
           pileSymbole.pop_back();

@@ -102,7 +102,4 @@ public :
 
 };
 
-
-
-
 #endif //GL_TP_ETAT_H

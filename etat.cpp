@@ -5,6 +5,7 @@
 #include <map>
 #include "etat.h"
 #include "iostream"
+
 using namespace std;
 
 std::map<int,int> regleToNbMembres = {{1,1},{2,3},{3,3},{4,3},{5,1}};
@@ -28,11 +29,9 @@ bool E0::transition(Automate &automate, Symbole *s) {
         case ERREUR:
             cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
             return true;
-            break;
         default :
             cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
             return true;
-            break;
     }
     return false;
 }
@@ -50,11 +49,9 @@ bool E1::transition(Automate &automate, Symbole *s) {
         case ERREUR:
             cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
             return true;
-            break;
         default :
             cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
             return true;
-            break;
     }
     return false;
 }
@@ -73,7 +70,6 @@ bool E2::transition(Automate &automate, Symbole *s) {
         case ERREUR:
             cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
             return true;
-            break;
         default :
             break;
     }
@@ -97,7 +93,6 @@ bool E3::transition(Automate &automate, Symbole *s) {
         case ERREUR:
             cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
             return true;
-            break;
         default :
             break;
     }
@@ -118,11 +113,9 @@ bool E4::transition(Automate &automate, Symbole *s) {
         case ERREUR:
             cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
             return true;
-            break;
         default :
             cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
             return true;
-            break;
     }
     return false;
 }
@@ -141,11 +134,9 @@ bool E5::transition(Automate &automate, Symbole *s) {
         case ERREUR:
             cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
             return true;
-            break;
         default :
             cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
             return true;
-            break;
     }
     return false;
 }
@@ -164,11 +155,9 @@ bool E6::transition(Automate &automate, Symbole *s) {
         case ERREUR:
             cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
             return true;
-            break;
         default :
             cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
             return true;
-            break;
     }
     return false;
 }
@@ -191,11 +180,9 @@ bool E7::transition(Automate &automate, Symbole *s) {
         case ERREUR:
             cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
             return true;
-            break;
         default :
             cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
             return true;
-            break;
     }
     return false;
 }
@@ -217,12 +204,9 @@ bool E8::transition(Automate &automate, Symbole *s) {
         case ERREUR:
             cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
             return true;
-            return true;
-            break;
         default :
             cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
             return true;
-            break;
     }
     return false;
 }
@@ -244,12 +228,9 @@ bool E9::transition(Automate &automate, Symbole *s) {
         case ERREUR:
             cout << "Un symbole incorrect a été détecté.\nmake man pour plus d'informations" <<endl;
             return true;
-            return true;
-            break;
         default :
             cout << "La formule passée en paramètre n'appartient pas à la grammaire.\nmake man pour plus d'informations" << endl;
             return true;
-            break;
     }
     return false;
 }
