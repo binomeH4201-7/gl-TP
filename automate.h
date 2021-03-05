@@ -5,6 +5,7 @@
 #include "symbole.h"
 #include "etat.h"
 #include "lexer.h"
+#include <iostream>
 using namespace std;
 
 class Etat;
@@ -28,5 +29,5 @@ class Automate {
         bool over;
 
     void avancer() {analyseur.Avancer(); };
-      Symbole * consulter() {return analyseur.Consulter() ;}
+      Symbole * consulter() {cout << "Symbole lu :" << analyseur.Consulter()->Eval() << endl;return analyseur.Consulter();}
 };

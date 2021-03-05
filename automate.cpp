@@ -26,6 +26,7 @@ void Automate::reduction(int aReduire) {
      Empiler eNext
     */
 
+    
     Entier* expr;
 
     if(aReduire ==1){

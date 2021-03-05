@@ -182,6 +182,7 @@ bool E7::transition(Automate &automate, Symbole *s) {
 
 bool E8::transition(Automate &automate, Symbole *s) {
     switch (s->getIdent()){
+        case PLUS:
             automate.reduction(regleToNbMembres[3]);
             break;
         case MULT:
