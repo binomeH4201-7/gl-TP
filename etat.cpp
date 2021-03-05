@@ -145,7 +145,7 @@ bool E6::transition(Automate &automate, Symbole *s) {
             automate.decalage(new E5(),false);
             break;
         case CLOSEPAR:
-            automate.decalage(new E9(),true);
+            automate.decalage(new E9(),false);
             break;
         case ERREUR:
             cout << "Erreur" <<endl;

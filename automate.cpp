@@ -41,15 +41,22 @@ void Automate::reduction(int aReduire) {
         pileEtat.pop_back();
         pileEtat.pop_back();
         pileEtat.pop_back();
-
-        int a = pileSymbole.back()->Eval();
-        cout<<"from automate.cpp a="<<a<<endl;
-        pileSymbole.pop_back();
-        Symbole* operateur = pileSymbole.back();
-        pileSymbole.pop_back();
-        cout<<"from automate.cpp b="<<pileSymbole.back()->Eval()<<endl;
-        expr = new Entier(operateur->Operation(a,pileSymbole.back()->Eval()));
-        pileSymbole.pop_back();
+        
+        if(pileSymbole.back()->Eval() != -1){ //si le premier est une valeur
+          cout << "reduction autour d'un opérateur" << endl;
+          int a = pileSymbole.back()->Eval();
+          pileSymbole.pop_back();
+          Symbole* operateur = pileSymbole.back();
+          pileSymbole.pop_back();
+          expr = new Entier(operateur->Operation(a,pileSymbole.back()->Eval()));
+          pileSymbole.pop_back();
+        }else{ //sinon, c'est qu'il s'agit de la règle E -> ( E )
+          cout << "reduction autour d'une parenthèse" << endl;
+          pileSymbole.pop_back();
+          expr = new Entier(pileSymbole.back()->Eval());
+          pileSymbole.pop_back();
+          pileSymbole.pop_back();
+        }
     }
     expr->ChangeIdent(EXPR);
     pileSymbole.push_back(expr);
